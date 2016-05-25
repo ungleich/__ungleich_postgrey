@@ -1,11 +1,8 @@
 cdist-type__ungleich_postgrey(7)
 ================================
+Install, configure, start, enable postgrey service
+
 ungleich GmbH <cdist--@--ungleich.ch>
-
-
-NAME
-----
-cdist-type__ungleich_postgrey - Install, configure, start, enable postgrey service
 
 
 DESCRIPTION
@@ -18,26 +15,27 @@ REQUIRED PARAMETERS
 -------------------
 None.
 
+
 OPTIONAL PARAMETERS
 -------------------
 None.
 
+
 EXAMPLES
 --------
 
---------------------------------------------------------------------------------
-# Install, configure, start and enable postgrey service
-__ungleich_postgrey
+.. code-block:: sh
 
---------------------------------------------------------------------------------
+    # Install, configure, start and enable postgrey service
+    __ungleich_postgrey
 
 
 SEE ALSO
 --------
-- cdist-type(7)
-- cdist-type__process(7)
-- cdist-type__start_on_boot(7)
-- cdist-type__package(7)
+- `cdist-type(7) <cdist-type.html>`_
+- `cdist-type__process(7) <cdist-type__process.html>`_
+- `cdist-type__start_on_boot(7) <cdist-type__start_on_boot.html>`_
+- `cdist-type__package(7) <cdist-type__package.html>`_
 
 
 COPYING
