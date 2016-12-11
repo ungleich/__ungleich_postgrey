@@ -18,9 +18,30 @@
 # along with cdist. If not, see <http://www.gnu.org/licenses/>.
 #
 
+os=$(cat $__global/explorer/os)
+osversion=$(cat "$__global/explorer/os_version")
+
 # make sure postgrey and postfix is installed
 __package postfix
 require="__package/postfix" __package postgrey
+
+# There is a bug that prevents restarting postgrey correctly and,
+# unfortunately, its patch is not present on outdated versions of
+# Postgrey (like the available on Debian Wheezy).
+
+case "$os" in
+    debian)
+        case $osversion in
+            7*)
+				require="__package/postgrey" __file "/etc/init.d/postgrey" \
+				        --source "$__type/files/init.d_file" --mode 0755
+            ;;
+        esac
+esac
+
+# place custom whitelist for Microsoft Exchange Online Protection (EOP)
+require="__package/postgrey" __file "/etc/postgrey/whitelist_clients.local" \
+        --source "$__type/files/custom_whitelist" --mode 0644
 
 # make sure postgrey is enabled on startup
 require="__package/postgrey" __start_on_boot postgrey --state present

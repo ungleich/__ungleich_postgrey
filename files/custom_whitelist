@@ -1,0 +1,12 @@
+#
+# Domain used by Microsoft Exchange Online Protection (EOP) as of 2016-11-21
+# Source: https://technet.microsoft.com/en-us/library/dn163583(v=exchg.150).aspx
+
+outbound.protection.outlook.com
+
+#
+# Domain used by Microsoft for personal Hotmail and Outlook accounts.
+#
+
+hotmail.com
+
